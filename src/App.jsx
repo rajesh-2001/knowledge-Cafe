@@ -7,7 +7,7 @@ function App() {
     <>
       <div className="lg:mx-44">
         <Header></Header>
-        <div className="md:flex md:gap-6" >
+        <div className="md:flex md:gap-6 mt-7" >
           <Blogs></Blogs>
           <Bookmark></Bookmark>
         </div>
