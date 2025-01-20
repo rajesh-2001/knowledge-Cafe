@@ -1,5 +1,5 @@
 import { FaBookmark } from 'react-icons/fa';
-const Blog = ({ blog,handleBlog}) => {
+const Blog = ({ blog,handleBooked, handleMarkAsRead}) => {
     const {id, author, cover, author_img, title, posted_date, reading_time, hashtag } = blog
     
     return (
@@ -16,7 +16,7 @@ const Blog = ({ blog,handleBlog}) => {
 
                 <div className="flex gap-x-2 text-[#11111199]">
                     <p className="text-base font-medium ">{reading_time} min read</p>
-                    <button onClick={()=>handleBlog(blog)}><FaBookmark></FaBookmark></button>
+                    <button onClick={()=>handleBooked(blog)}><FaBookmark></FaBookmark></button>
                 </div>
             </div>
             <p className="my-3 text-4xl font-bold mr-24">{title}</p>
@@ -25,7 +25,10 @@ const Blog = ({ blog,handleBlog}) => {
                     hashtag.map(hash => <span className="text-lg font-medium mr-3">{hash} </span>)
                 }
             </div>
-            <button className="text-[#6047EC] underline"><a href="#">Mark as read</a></button>
+            <button className="text-[#6047EC] underline"
+            onClick={()=> handleMarkAsRead(reading_time)}>
+                <a href="#">Mark as read</a>
+            </button>
         </div>
     );
 };
