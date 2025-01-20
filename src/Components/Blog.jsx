@@ -1,5 +1,5 @@
 import { FaBookmark } from 'react-icons/fa';
-const Blog = ({ blog}) => {
+const Blog = ({ blog,handleBlog}) => {
     const {id, author, cover, author_img, title, posted_date, reading_time, hashtag } = blog
     
     return (
@@ -16,7 +16,7 @@ const Blog = ({ blog}) => {
 
                 <div className="flex gap-x-2 text-[#11111199]">
                     <p className="text-base font-medium ">{reading_time} min read</p>
-                    <button><FaBookmark></FaBookmark></button>
+                    <button onClick={()=>handleBlog(blog)}><FaBookmark></FaBookmark></button>
                 </div>
             </div>
             <p className="my-3 text-4xl font-bold mr-24">{title}</p>
