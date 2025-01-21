@@ -11,7 +11,7 @@ const Bookmark = ({ blogInfo, readingTime}) => {
                 <p className="text-xl font-bold pt-7 pl-7">Bookmarked Blogs: {blogInfo.length}</p>
                 <div className="mt-4 mx-7 pb-7">
                     {
-                        blogInfo.map(blog => <AllBookedBlog key={id} blog={blog}></AllBookedBlog>)
+                        blogInfo.map((blog,idx) => <AllBookedBlog key={idx} blog={blog}></AllBookedBlog>)
                     }
                 </div>
             </div>

@@ -1,7 +1,7 @@
-import { FaBookmark } from 'react-icons/fa';
-const Blog = ({ blog,handleBooked, handleMarkAsRead}) => {
-    const {id, author, cover, author_img, title, posted_date, reading_time, hashtag } = blog
-    
+import { IoBookmarkOutline } from "react-icons/io5";
+const Blog = ({ blog, handleBooked, handleMarkAsRead }) => {
+    const { id, author, cover, author_img, title, posted_date, reading_time, hashtag } = blog
+
     return (
         <div className="border-b-4 pb-8 mr-6 mb-10">
             <img src={cover} className="rounded-lg"></img>
@@ -16,7 +16,7 @@ const Blog = ({ blog,handleBooked, handleMarkAsRead}) => {
 
                 <div className="flex gap-x-2 text-[#11111199]">
                     <p className="text-base font-medium ">{reading_time} min read</p>
-                    <button onClick={()=>handleBooked(blog)}><FaBookmark></FaBookmark></button>
+                    <button onClick={() => handleBooked(blog)} ><IoBookmarkOutline className="stroke-black"></IoBookmarkOutline></button>
                 </div>
             </div>
             <p className="my-3 text-4xl font-bold mr-24">{title}</p>
@@ -26,8 +26,8 @@ const Blog = ({ blog,handleBooked, handleMarkAsRead}) => {
                 }
             </div>
             <button className="text-[#6047EC] underline"
-            onClick={()=> handleMarkAsRead(reading_time)}>
-                <a href="#">Mark as read</a>
+                onClick={() => handleMarkAsRead(reading_time,id)}>
+                Mark as read
             </button>
         </div>
     );

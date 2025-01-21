@@ -13,8 +13,10 @@ function App() {
   }
 
   const [readingTime,setReadingTime] = useState(0);
-  const handleMarkAsRead = time =>{
+  const handleMarkAsRead = (time,id) =>{
     setReadingTime(readingTime+time)
+    const newBookmarks = blogInfo.filter(blog => blog.id !== id)
+    setBlog(newBookmarks)
   }
 
   return (
